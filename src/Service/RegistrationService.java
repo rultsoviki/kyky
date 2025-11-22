@@ -5,14 +5,12 @@ import Repository.StudentScheduleRepository;
 import domain.Student;
 import domain.Teacher;
 
-public class RegistrationService { // Думал буду из пасворда брать и закидывать в репозиторий с расписанием итог не сделал баластом весит
+public class RegistrationService {
     private PasswordRepository passwordRepository;
-    private StudentScheduleRepository studentScheduleRepository;
 
     public RegistrationService(PasswordRepository passwordRepository,
                                StudentScheduleRepository studentScheduleRepository) {
         this.passwordRepository = passwordRepository;
-        this.studentScheduleRepository = studentScheduleRepository;
     }
 
     public void registration(String login, String password, Student student) {
@@ -45,9 +43,6 @@ public class RegistrationService { // Думал буду из пасворда 
             System.out.println("Логин уже существует, введите другой логин");
         }
     }
-
-
-
 
 
 }

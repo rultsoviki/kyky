@@ -155,7 +155,8 @@ public class ConsoleUI {
             case "2":
                 System.out.println("Добавить расписание к студенту");
                 System.out.print("Введите имя студента: ");
-                Student student = authorizationService.getStud(names());
+                String name = names();
+                Student student = authorizationService.getStudName(name);
                 System.out.println("Введите предметы для расписания студента через пробел ");
                 List<Lesson> lessons1 = scheduleAndGradeService.createLessonsFromInput();
                 Schedule schedule = new Schedule();
@@ -166,25 +167,25 @@ public class ConsoleUI {
             case "3":
                 System.out.println("Поменять расписание у студента");
                 System.out.print("Введите имя студента: ");
-                Student student1 = authorizationService.getStud(names());
+                Student student1 = authorizationService.getStudName(names());
                 scheduleAndGradeService.changeSchedule(student1);
                 break;
             case "4":
                 System.out.println("Изменить оценку у студента");
                 System.out.print("Введите имя студента: ");
-                Student student2 = authorizationService.getStud(names());
+                Student student2 = authorizationService.getStudName(names());
                 scheduleAndGradeService.updateStudentGrade(student2);
                 break;
             case "5":
                 System.out.println("Удалить студента с расписанием");
                 System.out.print("Введите имя студента: ");
-                Student studen3 = authorizationService.getStud(names());
+                Student studen3 = authorizationService.getStudName(names());
                 scheduleAndGradeService.removeStudent(studen3);
                 break;
             case "6":
                 System.out.println("Удаление предмета в расписании у студента");
                 System.out.print("Введите имя студента: ");
-                Student studen4 = authorizationService.getStud(names());
+                Student studen4 = authorizationService.getStudName(names());
                 scheduleAndGradeService.removeLessonUsingYourMethod(studen4);
                 break;
 

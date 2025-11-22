@@ -64,4 +64,15 @@ public class PasswordRepository {
         return new ArrayList<>(mapTeacherPas.values());
     }
 
+
+    public Student getNameStudent(String name) {
+        for (Map.Entry<String, Student> entry : mapStudentPas.entrySet()) {
+            String key = entry.getKey();
+            Student student = entry.getValue();
+            if (student.getName().equals(name)) {
+                return student;
+            }
+        }
+        return null;
+    }
 }

@@ -20,8 +20,8 @@ public class AuthorizationService {
         return false;
     }
 
-    public Student getStud(String login) {
-        return passwordRepository.getStudent(login);
+    public Student getStud(String name) {
+        return passwordRepository.getStudent(name);
     }
 
     public boolean authorizationTeacher(String login, String password) {
@@ -34,5 +34,8 @@ public class AuthorizationService {
 
     public Teacher getTeacher(String login) {
         return passwordRepository.getTeacher(login);
+    }
+    public Student getStudName(String name) {
+        return passwordRepository.getNameStudent(name);
     }
 }
